@@ -50,7 +50,7 @@ export default function OrphanageData() {
 
     await api.post('orphanages', data)
     alert('Cadastro realizado com sucesso!')
-    navigation.navigate('OrphanagesMap')
+    navigation.navigate('Success')
   }
 
   async function handleSelectImages(){
@@ -71,6 +71,9 @@ export default function OrphanageData() {
 
     const { uri } = result;
     setImages([...images, uri]);
+  }
+  function handleCancel(){
+    navigation.navigate('DeleteConfirm')
   }
 
   return (
@@ -143,6 +146,9 @@ export default function OrphanageData() {
 
       <RectButton style={styles.nextButton} onPress={handleCreateOrphanage}>
         <Text style={styles.nextButtonText}>Cadastrar</Text>
+      </RectButton>
+      <RectButton style={styles.cancelButton} onPress={handleCancel}>
+        <Text style={styles.nextButtonText}>Cancelar</Text>
       </RectButton>
     </ScrollView>
   )
@@ -219,6 +225,14 @@ const styles = StyleSheet.create({
 
   nextButton: {
     backgroundColor: '#15c3d6',
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 56,
+    marginTop: 32,
+  },
+  cancelButton: {
+    backgroundColor: '#ff669d',
     borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',

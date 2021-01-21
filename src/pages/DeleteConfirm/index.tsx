@@ -10,9 +10,12 @@ import styles from './styles';
 
 
 function DeleteConfirm (){
-  const { navigate } = useNavigation()
+  const { navigate, goBack } = useNavigation()
   function handleGo(){
-    navigate('Onboarding2')
+    navigate('Onboarding')
+  }
+  function handleGoBack(){
+    goBack()
   }
 
   return (
@@ -24,7 +27,7 @@ function DeleteConfirm (){
           Tem certeza que quer cancelar esse cadastro?
         </Text>
         <View style={styles.buttons}>
-          <RectButton style={styles.buttonNao} onPress={handleGo}>
+          <RectButton style={styles.buttonNao} onPress={handleGoBack}>
             <Text style={styles.textButton} >Não</Text>
           </RectButton>
           <RectButton style={styles.buttonSim} onPress={handleGo}>

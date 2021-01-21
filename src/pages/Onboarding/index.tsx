@@ -15,7 +15,7 @@ import styles from './styles';
 function Onboarding (){
   const { navigate } = useNavigation()
   function handleGo(){
-    navigate('DeleteConfirm')
+    navigate('Onboarding2')
   }
 
   return (

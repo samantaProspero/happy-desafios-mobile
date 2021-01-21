@@ -10,7 +10,7 @@ import styles from './styles';
 function Success (){
   const { navigate } = useNavigation()
   function handleGo(){
-    navigate('Onboarding2')
+    navigate('Onboarding')
   }
 
   return (
